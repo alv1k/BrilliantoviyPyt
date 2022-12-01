@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<style type="text/css">
 		body{
-			background-color: #9B7133;
 			font-family: Comfortaa;
 		}
 		.boxs {
@@ -88,7 +87,6 @@
 			position: absolute;
 			top: 100px;
 			width: 500px;
-			height: 300px;
 			left: 320px;
 			border: 1px solid darkred;
 			border-radius: 20px;
@@ -107,10 +105,16 @@
 			position: absolute;
 			top: 100px;
 			width: 500px;
-			height: 200px;
 			left: 320px;
 			border: 1px solid lightseagreen;
 			border-radius: 20px;
+			font-size: 40px;
+			text-align: center;
+		}
+		p{
+			font-size: 20px;
+			font-weight: bold;
+			margin-left: 50px;
 		}
 
 
@@ -135,8 +139,7 @@
 				
 		<div class="boxs red" style="margin-left: 460px">4</div> 
 		<div class="boxs black" style="margin-left: 570px">5</div>
-		<div class="boxs green" style="margin-left: 680px">
-			<p>6</p>
+		<div class="boxs green" style="margin-left: 680px">6
 		</div>
 		<div class="boxs red" style="margin-left: 790px">7</div>
 
@@ -146,7 +149,6 @@
 		<div class="boxs black" style="margin-left: 1230px">11</div>
 
 		<div class="boxs black" style="margin-left: 1340px;">12 
-			<p></p>
 		</div>
 		<div class="boxs red" style="margin-left: 1340px; margin-top: 110px">13</div>
 		<div class="boxs green" style="margin-left: 1340px; margin-top: 220px">14</div>	
@@ -236,22 +238,24 @@
 
 	let playerObject0 = {
 		step: 0,
-		correctRedAnswers: 7,
+		correctRedAnswers: 0,
 	}
 	let playerObject1 = {
 		step: 0,
-		correctRedAnswers: 7,
+		correctRedAnswers: 0,
 	}
 	let playerObject2 = {
 		step: 0,
-		correctRedAnswers: 7,
+		correctRedAnswers: 0,
 	}
 	let playerObject3 = {
 		step: 0,
-		correctRedAnswers: 7,
+		correctRedAnswers: 0,
 	}
 
 	let allPlayers = [playerObject0, playerObject1, playerObject2, playerObject3];
+
+	
 	let question = ["Чем отличается алмаз от бриллианта",
 			"Какова плотность алмаза",
 			"Какая компания занимается добычей алмазов в россии",
@@ -325,7 +329,7 @@
 			"В связи с ее геологической структуры с Восточной Африкой, где были открыты еще в 1766 году первые источники алмазов.",
 			"В 1857 году. ",
 			"Зарница. Была открыта в 1654 году.",
-			"Их окраска может быть коньячной, пурпурной, зеленой, розовой, красной, голубой или синей",
+			"Их окраска может быть серой, пурпурной, зеленой, розовой, красной, голубой или синей",
 			"Сергеев Юрий Борисович - советский геолог, доктор геолого-минералогических наук.",
 			"МИР. Глубина составляет 225 м, а диаметр 3.9км."
     	];
@@ -428,7 +432,6 @@
 		}
 	}
 	let queueHelperPlus1 = function(){
-		console.log("функция кьюхелпер сработала")
 		queueHelpler++;
 		if(queueHelpler==4){
 			queueHelpler=0;
@@ -506,7 +509,7 @@
 		    playerObject0.step =  playerObject0.step + random;
 		    checkStep();
 			document.getElementById("player1").remove();
-			console.log("у игрока1 выпало " + random + ", иди на клетку " + playerObject0.step);
+			alert("у игрока1 выпало " + random + ", иди на клетку " + playerObject0.step);
 			createPlayer1();
 			if(playerObject0.step == 4 || playerObject0.step == 9 || playerObject0.step == 13 || playerObject0.step == 18 || playerObject0.step == 22 || playerObject0.step == 24 || playerObject0.step == 29 || playerObject0.step == 2 || playerObject0.step == 7 || playerObject0.step == 15 || playerObject0.step == 20 || playerObject0.step == 26 || playerObject0.step == 31){
 				redStepQuestionShow(0);
@@ -524,7 +527,7 @@
 		    playerObject1.step =  playerObject1.step + random;
 		    checkStep();
 			document.getElementById("player2").remove();
-			console.log("у игрока2 выпало " + random + ", иди на клетку " + playerObject1.step);
+			alert("у игрока2 выпало " + random + ", иди на клетку " + playerObject1.step);
 			createPlayer2();
 			if(playerObject1.step == 4 || playerObject1.step == 9 || playerObject1.step == 13 || playerObject1.step == 18 || playerObject1.step == 22 || playerObject1.step == 24 || playerObject1.step == 29 || playerObject1.step == 2 || playerObject1.step == 7 || playerObject1.step == 15 || playerObject1.step == 20 || playerObject1.step == 26 || playerObject1.step == 31){
 				redStepQuestionShow(1);
@@ -543,7 +546,7 @@
 		    playerObject2.step =  playerObject2.step + random;
 		    checkStep();
 			document.getElementById("player3").remove();
-			console.log("у игрока3 выпало " + random + ", иди на клетку " + playerObject2.step)
+			alert("у игрока3 выпало " + random + ", иди на клетку " + playerObject2.step)
 			createPlayer3();	
 			if(playerObject2.step == 4 || playerObject2.step == 9 || playerObject2.step == 13 || playerObject2.step == 18 || playerObject2.step == 22 || playerObject2.step == 24 || playerObject2.step == 29 || playerObject2.step == 2 || playerObject2.step == 7 || playerObject2.step == 15 || playerObject2.step == 20 || playerObject2.step == 26 || playerObject2.step == 31){
 				redStepQuestionShow(2);
@@ -562,7 +565,7 @@
 		    playerObject3.step =  playerObject3.step + random;
 		    checkStep();
 			document.getElementById("player4").remove();
-			console.log("у игрока3 выпало " + random + ", иди на клетку " + playerObject3.step)
+			alert("у игрока3 выпало " + random + ", иди на клетку " + playerObject3.step)
 			createPlayer4();
 			if(playerObject3.step == 4 || playerObject3.step == 9 || playerObject3.step == 13 || playerObject3.step == 18 || playerObject3.step == 22 || playerObject3.step == 24 || playerObject3.step == 29 || playerObject3.step == 2 || playerObject3.step == 7 || playerObject3.step == 15 || playerObject3.step == 20 || playerObject3.step == 26 || playerObject3.step == 31){
 				redStepQuestionShow(3);
@@ -583,7 +586,6 @@
 
 
 	bt.addEventListener("click",  function() {
-		console.log(queueHelpler);
 		switch(queueHelpler){
 			case 0: 
 			diceScript(0)
