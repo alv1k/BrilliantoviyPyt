@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			background-color: #9B7133;
+			font-family: Comfortaa;
+		}
+		.boxs {
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			font-size: 40px;
+			font-weight: bold;
+		}
+		.red{
+			background-image: url(6.png);
+			background-size: 100% 100%;
+		}
+		.green{
+			background-image: url(3.png);
+			background-size: 100% 100%;
+		}
+		.black{
+			background-image: url(1.png);
+			background-size: 100% 100%;
+		}
+		.orange{
+			background-image: url(4.png);
+			background-size: 100% 100%;
+		}
+		.kosti{
+			background-image: url(kosti.png);
+			background-size: 100% 100%;
+		}
+		.player{
+			width: 55px;
+			height: 55px;
+			position: absolute ;
+
+		}
+		.player1{
+			left: 10px;
+			top: -10px;
+			z-index: 1;
+		}
+		.player2{
+			left: 20px;
+			top: -10px;
+			z-index: 2;
+		}
+		.player3{
+			left: 30px;
+			top: -10px;
+			z-index: 2;
+		}
+		.player4{
+			left: 40px;
+			top: -10px;
+			z-index: 2;
+		}
+		.cristal1{
+			width: 250px;
+			height: 250px;
+		}
+		.cristal2{
+			width: 250px;
+			height: 250px;
+		}
+		.cristal3{
+			width: 250px;
+			height: 250px;
+		}
+		.cristal4{
+			width: 250px;
+			height: 250px;
+		}
+		.crystalDiv{
+			height: 250px;
+			position: absolute;
+			top: 250px;
+		}
+		.questionBox{
+			display: none;
+			background-color: red;
+			position: absolute;
+			top: 100px;
+			width: 500px;
+			height: 300px;
+			left: 320px;
+			border: 1px solid darkred;
+			border-radius: 20px;
+		}
+		.questionText{
+			text-align: center;
+			font-size: 30px;
+		}
+		.questionAnswer{
+			text-align: center;
+			font-size: 20px;
+		}
+		.chanceBox{
+			display: none;
+			background-color: green;
+			position: absolute;
+			top: 100px;
+			width: 500px;
+			height: 200px;
+			left: 320px;
+			border: 1px solid lightseagreen;
+			border-radius: 20px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h4 style="margin-left: 20px"></h4>
+		<div style="display: flex;">
+			<img src="kosti.png" class="bt" style="width: 100px; margin-left: 20px">	
+		</div>	
+		<div class="boxs firsBox black" style="margin-left: 20px">
+			<h4></h4>
+		    <img id="player1" class="player player1" src="shahtyor1.png">
+		    <img id="player2" class="player player2" src="shahtyor2.png">
+		    <img id="player3" class="player player3" src="shahtyor3.png">
+		    <img id="player4" class="player player4" src="shahtyor4.png">
+		</div>
+		<div class="boxs black" style="margin-left: 130px">1</div>
+		<div class="boxs red" style="margin-left: 240px">2</div>
+		<div class="boxs green" style="margin-left: 350px">3</div>
+				
+		<div class="boxs red" style="margin-left: 460px">4</div> 
+		<div class="boxs black" style="margin-left: 570px">5</div>
+		<div class="boxs green" style="margin-left: 680px">
+			<p>6</p>
+		</div>
+		<div class="boxs red" style="margin-left: 790px">7</div>
+
+		<div class="boxs black" style="margin-left: 900px">8</div>
+		<div class="boxs red" style="margin-left: 1010px;" >9</div>
+		<div class="boxs green" style="margin-left: 1120px">10</div>
+		<div class="boxs black" style="margin-left: 1230px">11</div>
+
+		<div class="boxs black" style="margin-left: 1340px;">12 
+			<p></p>
+		</div>
+		<div class="boxs red" style="margin-left: 1340px; margin-top: 110px">13</div>
+		<div class="boxs green" style="margin-left: 1340px; margin-top: 220px">14</div>	
+		<div class="boxs red" style="margin-left: 1340px; margin-top: 330px">15</div>		
+
+		<div class="boxs green" style="margin-left: 1340px; margin-top: 440px">16</div>
+		<div class="boxs black" style="margin-left: 1230px; margin-top: 440px">17</div>
+		<div class="boxs red" style="margin-left: 1120px; margin-top: 440px">18</div>
+		<div class="boxs black" style="margin-left: 1010px; margin-top: 440px">19</div>
+
+		<div class="boxs red" style="margin-left: 900px; margin-top: 440px">20</div>
+		<div class="boxs black" style="margin-left: 790px; margin-top: 440px">21</div>
+		<div class="boxs red" style="margin-left: 680px; margin-top: 440px">22</div>
+		<div class="boxs green" style="margin-left: 570px; margin-top: 440px">23</div>
+
+		<div class="boxs red" style="margin-left: 460px; margin-top: 440px">24</div>
+		<div class="boxs black" style="margin-left: 350px; margin-top: 440px">25</div>
+		<div class="boxs red" style="margin-left: 240px; margin-top: 440px">26</div>
+		<div class="boxs green" style="margin-left: 130px; margin-top: 440px">27</div>
+
+		<div class="boxs black" style="margin-left: 20px; margin-top: 440px">28</div>
+		<div class="boxs red" style="margin-left: 20px; margin-top: 330px">29</div>
+		<div class="boxs green" style="margin-left: 20px; margin-top: 220px">30</div>	
+		<div class="boxs red" style="margin-left: 20px; margin-top: 110px">31</div>		
+
+		<!--последние дивы-->
+		
+		<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="crystalDiv" style="left: 160px; background-image: url(shahtyor1.png); background-size: 30% 30%; background-repeat: no-repeat;">
+			<p>Игрок 1</p>
+
+			<img class="cristal1" src="cristal.png">
+		</div>
+		<div class="crystalDiv"  style="left: 460px; background-image: url(shahtyor2.png); background-size: 30% 30%; background-repeat: no-repeat;">
+			<p>Игрок 2</p>
+			<img class="cristal2" src="cristal.png">
+		</div>
+		<div class="crystalDiv"  style="left: 760px; background-image: url(shahtyor3.png); background-size: 30% 30%; background-repeat: no-repeat;">
+			<p>Игрок 3</p>
+			<img class="cristal3" src="cristal.png">
+		</div>
+		<div class="crystalDiv"  style="left: 1060px; background-image: url(shahtyor4.png); background-size: 30% 30%; background-repeat: no-repeat;">
+			<p>Игрок 4</p>
+			<img class="cristal4" src="cristal.png">
+		</div>	
+		
+		<div class="questionBox" style="margin-left: 130px; margin-top: 110px; background-color: palevioletred; opacity: 1">
+			<p class="questionText"></p>
+			<p class="questionAnswer"></p>
+			<p class="questionAnswer">а2</p>
+			<p class="questionAnswer">а3</p>
+
+		</div>
+		<div class="chanceBox" style="margin-left: 130px; margin-top: 110px; opacity: 1">
+			<p class="chanceText"></p>
+			<p class="chanceDetails"></p>
+		</div>
+	</div>	
+
+<script type="text/javascript">
+	let bt = document.querySelector(".bt");//нашли игральную кость
+	let boxs = document.querySelectorAll(".boxs");//нашли все коробки
+	let player1 = document.querySelector(".player1");
+	let player2 = document.querySelector(".player2");
+	let player3 = document.querySelector(".player3");
+	let player4 = document.querySelector(".player4");
+	let players = [player1,player2,player3,player4];
+
+
+	let firsBox = document.querySelector(".firsBox");
+	let cristal1= document.querySelector(".cristal1");
+	let cristal2= document.querySelector(".cristal2");
+	let cristal3= document.querySelector(".cristal3");
+	let cristal4= document.querySelector(".cristal4");
+	let questionText= document.querySelector(".questionText");
+	let questionAnswer= document.querySelectorAll(".questionAnswer");
+	let questionBox = document.querySelector(".questionBox");
+	let chanceBox = document.querySelector(".chanceBox");
+	let chanceText = document.querySelector(".chanceText");
+	let chanceDetails = document.querySelector(".chanceDetails");
+	let queue = [0,1,2,3];//добавлено	
+    let queueHelpler = 0;
+
+	let playerObject0 = {
+		step: 0,
+		correctRedAnswers: 7,
+	}
+	let playerObject1 = {
+		step: 0,
+		correctRedAnswers: 7,
+	}
+	let playerObject2 = {
+		step: 0,
+		correctRedAnswers: 7,
+	}
+	let playerObject3 = {
+		step: 0,
+		correctRedAnswers: 7,
+	}
+
+	let allPlayers = [playerObject0, playerObject1, playerObject2, playerObject3];
+	let question = ["Чем отличается алмаз от бриллианта",
+			"Какова плотность алмаза",
+			"Какая компания занимается добычей алмазов в россии",
+			"в 1992 году была образована акционерная компания ….",
+			"Алмазы разграничивают по таким областям применения как: …",
+			"Как 'рождаются' алмазы?",
+			"Эта компания занимается производством бриллиантов из Якутии, ювелирных изделий с бриллиантами и их сбытом?",
+			"Какая всемирно известная организация продала на мировом рынке первую партию промышленных товаров?",
+			"Минерал, кубическая аллотропная форма углерода?",
+			"Алмазы, созданные в лаборатории или лабораторно-выращенные алмазы, называются …",
+			"В каком году была основана кампания АК 'АЛРОСА'?",
+			"Почему геологи выбрали Сибирь наиболее перспективным районом для открытия алмазов?",
+			"В каком году был создан трест Якуталмаз'?",
+			"Как называлась кимберлитовая трубка первого на территории России коренного месторождения?",
+			"Каких цветов бывают алмазы?",
+			"Как звали исследователя, в честь которого был назван крупный, в 120 карат, ювелирный камень?",
+			"Самый большой в мире алмазный карьер - кимберлитовая трубка"
+		];
+
+
+    let answers = [
+			"Алмаз - это природный минерал, а бриллиант - это качественно ограненный алмаз",
+			"3500 кг/м в кубе",
+			"АК Алроса. Ал - алмазы, Ро - России, Са - Саха",
+			"Алмазы России - Саха",
+			"1. Ювелирные алмазы (поддающиеся обработке и огранке) 2. Технические алмазы (камни со множеством вкраплений и поврежденной структурой)",
+			"Алмазы образуются в геологически стабильных районах континентов на глубине 100-200 км, где температура достигает 1100-1300 градусов.",
+			"ЭПЛ Даймонд",
+			"Союзпромэкспорт - всесоюзное объединение для вывоза руды и продуктов горной промышленности.",
+			"Алмаз. При повышенных температурах постепенно переходит в графит.",
+			"Синтетические или искусственные. Получаются при использовании высокого давления или высокой температуры.",
+			"19 февраля 1992",
+			"В связи с ее геологической структуры с Южной Африкой, где были открыты еще в 1866 году первые источники алмазов.",
+			"В 1957 году. ",
+			"Зарница. Была открыта в 1954 году.",
+			"Их окраска может быть желтой, оранжевой, коньячной, пурпурной, зеленой, розовой, красной, голубой или синей",
+			"Михаил Михайлович Одинцов - советский геолог, доктор геолого-минералогических наук.",
+			"МИР. Глубина составляет 525 м, а диаметр 1.2 км."
+    	];
+	let answersFake2 = [
+			"Алмаз - это природный минерал",
+			"2300 кг/м в кубе",
+			"АК Алроса. Ал - алмазы, Ро - Ролики, Са - Саха",
+			"Алмазы Ролики - Саха",
+			"1. Ювелирные алмазы 2. Технические алмазы (бриллианты со множеством вкраплений и поврежденной структурой)",
+			"Бриллианты образуются в геологически стабильных районах континентов на глубине 400-550 м, где температура достигает 1900-1950 градусов.",
+			"ПЭЛ Даймонд",
+			"Союзпромэкспорт - всесоюзное объединение для вывоза алмазов и продуктов равниной промышленности.",
+			"Бриллиант. При повышенных температурах постепенно переходит в графит.",
+			"Синтетические или искусственные. Получаются при использовании высокого давления или высокой температуры.",
+			"19 декабря 1982",
+			"В связи с ее геологической структуры с Северной Африкой, где были открыты еще в 1866 году первые источники алмазов.",
+			"В 1912 году. ",
+			"Зарница. Была открыта в 1924 году.",
+			"Их окраска может быть радужной, оранжевой, коньячной, зеленой, розовой, красной, голубой или синей",
+			"Тонких Алексей Анатольевич - советский геолог, доктор геолого-минералогических наук.",
+			"МИР. Глубина составляет 555 м, а диаметр 2.2 км."
+    	];
+	let answersFake3 = [
+			"Бриллиант - это природный минерал, а алмаз - это качественно ограненный бриллиант",
+			"2100 кг/м в кубе",
+			"АК Алроса. Ал - алмазы, Ро - России, Са - Савино",
+			"Алмазы России - Савино",
+			"1. Ювелирные бриллианты (поддающиеся обработке и огранке) 2. Технические алмазы (камни со множеством вкраплений и поврежденной структурой)",
+			"Алмазы образуются в геологически стабильных районах континентов на глубине 140-210 км, где температура достигает 3300-4400 градусов.",
+			"ЛЭП Даймонд",
+			"Союзпромэкспорт - всесоюзное объединение для вывоза камней и продуктов горной промышленности.",
+			"Алмаз. При понижение температуры постепенно переходит в графит.",
+			"Синтетические или искусственные. Получаются при использовании низкого давления или высокой температуры.",
+			"23 июля 1956",
+			"В связи с ее геологической структуры с Восточной Африкой, где были открыты еще в 1766 году первые источники алмазов.",
+			"В 1857 году. ",
+			"Зарница. Была открыта в 1654 году.",
+			"Их окраска может быть коньячной, пурпурной, зеленой, розовой, красной, голубой или синей",
+			"Сергеев Юрий Борисович - советский геолог, доктор геолого-минералогических наук.",
+			"МИР. Глубина составляет 225 м, а диаметр 3.9км."
+    	];
+
+
+    let chance = [
+		"Сделайте дополнительный ход",		
+		"Ничего не произошло, ждите своего хода"];
+
+    let createPlayer1 = function(){
+    	let newImg = document.createElement("img");
+    	
+		boxs[playerObject0.step].appendChild(newImg);
+		newImg.classList.add("player");
+		newImg.classList.add("player1");
+		newImg.id = 'player1';
+
+		newImg.src = "shahtyor1.png";
+
+    }
+    let createPlayer2 = function(){
+    	let newImg = document.createElement("img");
+		boxs[playerObject1.step].appendChild(newImg);
+		newImg.classList.add("player");
+		newImg.classList.add("player2");
+		newImg.id = 'player2';
+		newImg.src = "shahtyor2.png";
+    }
+    let createPlayer3 = function(){
+    	let newImg = document.createElement("img");
+		boxs[playerObject2.step].appendChild(newImg);
+		newImg.classList.add("player");
+		newImg.classList.add("player3");
+		newImg.id = 'player3';
+		newImg.src = "shahtyor3.png";
+    }
+    let createPlayer4 = function(){
+    	let newImg = document.createElement("img");
+		boxs[playerObject3.step].appendChild(newImg);
+		newImg.classList.add("player");
+		newImg.classList.add("player4");
+		newImg.id = 'player4';
+		newImg.src = "shahtyor4.png";
+    }
+
+    let createPlayerAll = [createPlayer1,createPlayer2,createPlayer3,createPlayer4];
+
+	let greenStepQuestionShow = function(){
+		let randomChance = Math.round(Math.random()*1);
+		alert("мы на зеленой ячейке");
+		chanceText.innerHTML=chance[randomChance];
+		chanceBox.style.display="block";
+		let timeoutChance = setTimeout(chanceNone, 5000);//добавлено
+		if(randomChance == 0){
+			chanceDetails.innerHTML = "Вы получили шанс сделать дополнительный ход";
+			
+			
+		}else {
+			chanceDetails.innerHTML = "Вам выпала неудачная карта, ничего не произошло, ждите своего следующего хода";
+			queueHelperPlus1();
+		}
+	}
+
+	let blackStep = function (argument) {
+		queueHelpler++;
+		if(queueHelpler==4){
+			queueHelpler=0;
+		}
+	}
+
+	let crystalsForPlayer1 = ["cristal.png", "cristalYellow1.png","cristalYellow2.png","cristalYellow3.png","cristalYellow4.png","cristalYellow5.png","cristalYellow6.png","cristalYellow7.png","cristalYellow8.png"];
+	let crystalsForPlayer2 = ["cristal.png", "cristalRed1.png","cristalRed2.png","cristalRed3.png","cristalRed4.png","cristalRed5.png","cristalRed6.png","cristalRed7.png","cristalRed8.png"];
+	let crystalsForPlayer3 = ["cristal.png", "cristalPerpul1.png","cristalPerpul2.png","cristalPerpul3.png","cristalPerpul4.png","cristalPerpul5.png","cristalPerpul6.png","cristalPerpul7.png","cristalPerpul8.png"];
+	let crystalsForPlayer4 = ["cristal.png", "cristalGreen1.png","cristalGreen2.png","cristalGreen3.png","cristalGreen4.png","cristalGreen5.png","cristalGreen6.png","cristalGreen7.png","cristalGreen8.png"];
+
+	let checkStep = function(){
+		if(allPlayers[queueHelpler].step == 32){
+			allPlayers[queueHelpler].step = 0
+		}else if(allPlayers[queueHelpler].step == 33){
+			allPlayers[queueHelpler].step = 1;
+		}else if(allPlayers[queueHelpler].step == 34){
+			allPlayers[queueHelpler].step = 2;
+		}else if(allPlayers[queueHelpler].step == 35){
+			allPlayers[queueHelpler].step = 3;
+		}else if(allPlayers[queueHelpler].step == 36){
+			allPlayers[queueHelpler].step = 4;
+		}else if(allPlayers[queueHelpler].step == 37){
+			allPlayers[queueHelpler].step = 5;
+		}
+	}
+	let checkCorrectAnswers = function(){
+		if(allPlayers[0].correctRedAnswers==8){
+			window.location.href = 'endGame1.html';
+		}else if(allPlayers[1].correctRedAnswers==8){
+			window.location.href = 'endGame2.html';
+		}else if(allPlayers[2].correctRedAnswers==8){
+			window.location.href = 'endGame3.html';
+		}else if(allPlayers[3].correctRedAnswers==8){
+			window.location.href = 'endGame.4html';
+		}
+	}
+	let queueHelperPlus1 = function(){
+		console.log("функция кьюхелпер сработала")
+		queueHelpler++;
+		if(queueHelpler==4){
+			queueHelpler=0;
+		}
+	}
+
+	let redStepQuestionShow = function(arg){
+		alert("мы на красной ячейке");
+		let randomQuestion = Math.round(Math.random()*16);
+		
+		questionText.innerHTML=question[randomQuestion];
+		questionAnswer[0].innerHTML=answers[randomQuestion];
+		questionAnswer[1].innerHTML=answersFake2[randomQuestion];
+		questionAnswer[2].innerHTML=answersFake3[randomQuestion];
+		questionBox.style.display="block";
+		questionAnswer[0].onclick=function() {
+			if(arg == 0){
+				allPlayers[0].correctRedAnswers++;
+				cristal1.src= crystalsForPlayer1[allPlayers[0].correctRedAnswers];
+				checkCorrectAnswers();
+				questionBox.style.display="none";
+				queueHelperPlus1();
+				console.log("игрок 1 ответил верно");
+				alert("правильный ответ");
+			}else if(arg == 1){
+				//не сработало
+				allPlayers[1].correctRedAnswers++;
+				cristal2.src= crystalsForPlayer2[allPlayers[1].correctRedAnswers];
+				checkCorrectAnswers();
+				questionBox.style.display="none";
+				queueHelperPlus1();
+				console.log("игрок 2 ответил верно");
+				alert("правильный ответ");
+			}else if(arg == 2){
+				allPlayers[2].correctRedAnswers++;
+				cristal3.src= crystalsForPlayer3[allPlayers[2].correctRedAnswers];
+				checkCorrectAnswers();
+				questionBox.style.display="none";
+				queueHelperPlus1();
+				console.log("игрок 3 ответил верно");
+				alert("правильный ответ");
+			}else if(arg == 3){
+				allPlayers[3].correctRedAnswers++;
+				cristal4.src= crystalsForPlayer4[allPlayers[3].correctRedAnswers];
+				checkCorrectAnswers();
+				questionBox.style.display="none";
+				queueHelperPlus1();
+				console.log("игрок 4 ответил верно");
+				alert("правильный ответ");
+			}
+			
+		}
+		questionAnswer[1].onclick=function() {
+			alert("неправильно");
+			questionBox.style.display="none";//добавлено
+			queueHelperPlus1();
+		}
+		questionAnswer[2].onclick=function() {
+			alert("неправильно");
+			questionBox.style.display="none";//добавлено
+			queueHelperPlus1();
+		}
+	}
+
+	let chanceNone = function(){
+		chanceBox.style.display = "none";
+	}
+	let oldStep = 0;
+
+ 	let diceScript = function(arg){
+    	let random = Math.round(Math.random()*5+1);
+		switch (arg) {
+		  case 0:
+		    //Здесь выполняются инструкции, если результат выражения равен value1
+		    playerObject0.step =  playerObject0.step + random;
+		    checkStep();
+			document.getElementById("player1").remove();
+			console.log("у игрока1 выпало " + random + ", иди на клетку " + playerObject0.step);
+			createPlayer1();
+			if(playerObject0.step == 4 || playerObject0.step == 9 || playerObject0.step == 13 || playerObject0.step == 18 || playerObject0.step == 22 || playerObject0.step == 24 || playerObject0.step == 29 || playerObject0.step == 2 || playerObject0.step == 7 || playerObject0.step == 15 || playerObject0.step == 20 || playerObject0.step == 26 || playerObject0.step == 31){
+				redStepQuestionShow(0);
+				//setTimeout(append, 1000);	
+			}else if(playerObject0.step == 0 ||playerObject0.step == 1 || playerObject0.step == 5 || playerObject0.step == 8 || playerObject0.step == 11 || playerObject0.step == 12 || playerObject0.step == 17 || playerObject0.step == 19 || playerObject0.step == 21 || playerObject0.step == 25 || playerObject0.step == 28){
+				blackStep();
+				//setTimeout(append, 1000);	
+			}else{
+				greenStepQuestionShow();
+				//setTimeout(append, 1000);	
+			}
+		    break;
+		  case 1:
+		    //Инструкции, соответствующие value2
+		    playerObject1.step =  playerObject1.step + random;
+		    checkStep();
+			document.getElementById("player2").remove();
+			console.log("у игрока2 выпало " + random + ", иди на клетку " + playerObject1.step);
+			createPlayer2();
+			if(playerObject1.step == 4 || playerObject1.step == 9 || playerObject1.step == 13 || playerObject1.step == 18 || playerObject1.step == 22 || playerObject1.step == 24 || playerObject1.step == 29 || playerObject1.step == 2 || playerObject1.step == 7 || playerObject1.step == 15 || playerObject1.step == 20 || playerObject1.step == 26 || playerObject1.step == 31){
+				redStepQuestionShow(1);
+				//setTimeout(append, 1000);	
+			}else if(playerObject1.step == 0 ||playerObject1.step == 1 || playerObject1.step == 5 || playerObject1.step == 8 || playerObject1.step == 11 || playerObject1.step == 12 || playerObject1.step == 17 || playerObject1.step == 19 || playerObject1.step == 21 || playerObject1.step == 25 || playerObject1.step == 28){
+				blackStep();
+				//setTimeout(append, 1000);	
+			}else{
+				greenStepQuestionShow();
+				//setTimeout(append, 1000);	
+			}
+		    break;
+		  case 2:
+		    //Инструкции, соответствующие значению valueN
+		    //statementsN
+		    playerObject2.step =  playerObject2.step + random;
+		    checkStep();
+			document.getElementById("player3").remove();
+			console.log("у игрока3 выпало " + random + ", иди на клетку " + playerObject2.step)
+			createPlayer3();	
+			if(playerObject2.step == 4 || playerObject2.step == 9 || playerObject2.step == 13 || playerObject2.step == 18 || playerObject2.step == 22 || playerObject2.step == 24 || playerObject2.step == 29 || playerObject2.step == 2 || playerObject2.step == 7 || playerObject2.step == 15 || playerObject2.step == 20 || playerObject2.step == 26 || playerObject2.step == 31){
+				redStepQuestionShow(2);
+				//setTimeout(append, 1000);	
+			}else if(playerObject2.step == 0 ||playerObject2.step == 1 || playerObject2.step == 5 || playerObject2.step == 8 || playerObject2.step == 11 || playerObject2.step == 12 || playerObject2.step == 17 || playerObject2.step == 19 || playerObject2.step == 21 || playerObject2.step == 25 || playerObject2.step == 28){
+				blackStep();
+				//setTimeout(append, 1000);	
+			}else{
+				greenStepQuestionShow();
+				//setTimeout(append, 1000);	
+			}
+		    break;
+		  case 3:
+		    //Инструкции, соответствующие значению valueN
+		    //statementsN
+		    playerObject3.step =  playerObject3.step + random;
+		    checkStep();
+			document.getElementById("player4").remove();
+			console.log("у игрока3 выпало " + random + ", иди на клетку " + playerObject3.step)
+			createPlayer4();
+			if(playerObject3.step == 4 || playerObject3.step == 9 || playerObject3.step == 13 || playerObject3.step == 18 || playerObject3.step == 22 || playerObject3.step == 24 || playerObject3.step == 29 || playerObject3.step == 2 || playerObject3.step == 7 || playerObject3.step == 15 || playerObject3.step == 20 || playerObject3.step == 26 || playerObject3.step == 31){
+				redStepQuestionShow(3);
+				//setTimeout(append, 1000);	
+			}else if(playerObject3.step == 0 ||playerObject3.step == 1 || playerObject3.step == 5 || playerObject3.step == 8 || playerObject3.step == 11 || playerObject3.step == 12 || playerObject3.step == 17 || playerObject3.step == 19 || playerObject3.step == 21 || playerObject3.step == 25 || playerObject3.step == 28){
+				blackStep();
+				//setTimeout(append, 1000);	
+			}else{
+				greenStepQuestionShow();
+				//setTimeout(append, 1000);	
+			}
+		    break;
+		}
+
+
+		
+    }
+
+
+	bt.addEventListener("click",  function() {
+		console.log(queueHelpler);
+		switch(queueHelpler){
+			case 0: 
+			diceScript(0)
+				break;
+			case 1:
+			diceScript(1)
+				break;
+			case 2:
+			diceScript(2)
+				break;
+			case 3:
+			diceScript(3)
+				break;
+
+		}
+		  
+		
+	});
+	
+
+
+
+</script>
+		
+</body>
+</html>
+
+
+
+
